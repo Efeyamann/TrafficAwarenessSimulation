@@ -1,4 +1,4 @@
-# --- Story Data (Senaryo Grafı) ---
+
 STORY_GRAPH = {
     "baslangic": {
         "text": "Bugün nasıl bir sürüş deneyimi yaşamak istersin?\nSeçimin tüm simülasyonun koşullarını belirleyecek.",
@@ -11,7 +11,7 @@ STORY_GRAPH = {
     },
     
     # ---------------------------------------------------------
-    # --- YOL 1: ŞEHİR İÇİ (City) - 10 ADIM ---
+    # --- YOL 1: ŞEHİR İÇİ ---
     # ---------------------------------------------------------
     "sehir_baslangic": {
         "text": "Şehir trafiğine girdin. İlk ışıklara yaklaşırken trafik yavaşladı ve ışık sarı yandı. Durursan arkandaki korna çalabilir.",
@@ -85,7 +85,7 @@ STORY_GRAPH = {
     },
 
     # ---------------------------------------------------------
-    # --- YOL 2: GECE YOLCULUĞU (Night) - 10 ADIM ---
+    # --- YOL 2: GECE YOLCULUĞU (Night) ---
     # ---------------------------------------------------------
     "gece_baslangic": {
         "text": "Hava karardı. Yola çıkmadan önce kontrol etmen gereken bir şey var mı?",
@@ -159,7 +159,7 @@ STORY_GRAPH = {
     },
 
     # ---------------------------------------------------------
-    # --- YOL 3: YAĞMURLU/ZORLU HAVA (Rain) - 10 ADIM ---
+    # --- YOL 3: YAĞMURLU/ZORLU HAVA (Rain) ---
     # ---------------------------------------------------------
     "yagmur_baslangic": {
         "text": "Dışarıda sağanak yağmur var. Yola çıkmadan önce lastiklerini kontrol ettin mi?",
@@ -233,7 +233,7 @@ STORY_GRAPH = {
     },
 
     # ---------------------------------------------------------
-    # --- YOL 4: KARLI DAĞ YOLU (Snow) - 10 ADIM ---
+    # --- YOL 4: KARLI DAĞ YOLU (Snow) ---
     # ---------------------------------------------------------
     "kar_baslangic": {
         "text": "Uludağ'a doğru yola çıkıyorsun. Mevsim kış, kar yağışı başladı. Aracında kış lastiği var mı?",
@@ -322,8 +322,8 @@ STORY_GRAPH = {
 
     # --- FİNALLER ---
     "son_kahraman": {
-        "text": "Tebrikler! Zorlu koşullara rağmen yolculuğu sağ salim tamamladın.\nGerçek bir trafik uzmanı gibi davrandın.", 
-        "options": [], "type": "final", "title": "SÜRÜŞ RAPORU: USTA ŞOFÖR"
+        "text": "Yolun sonuna ulaştın.", 
+        "options": [], "type": "final", "title": "SÜRÜŞ RAPORU: YOLCULUK TAMAMLANDI"
     },
     "son_kaza": {
         "text": "Maalesef kaza yaptın.\nSimülasyon, hatalarını görmen için sonlandırıldı. Lütfen kuralları gözden geçir.",

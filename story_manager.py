@@ -5,8 +5,8 @@ class StoryManager:
         self.nodes = STORY_GRAPH
         self.current_node_id = "baslangic"
         self.score = 0
-        self.flags = {} # Örn: {'seatbelt': True, 'tired': True}
-        self.history = [] # Gezilen düğümler
+        self.flags = {}
+        self.history = []
 
     def get_current_node(self):
         return self.nodes[self.current_node_id]
@@ -18,23 +18,19 @@ class StoryManager:
         
         selected_option = node["options"][option_index]
         
-        # 1. Puanı güncelle
         points = selected_option.get("points", 0)
         self.score += points
         
-        # 2. Bayrak (Flag) ayarla
         flag = selected_option.get("set_flag")
         if flag:
             self.flags[flag] = True
             
-        # 3. Geçmişe ekle
         self.history.append({
             "node_id": self.current_node_id,
             "choice_text": selected_option["text"],
             "points_earned": points
         })
 
-        # 4. Bir sonraki düğüme geç
         self.current_node_id = selected_option["next_node"]
         
         return self.current_node_id
@@ -44,7 +40,6 @@ class StoryManager:
         report = f"Toplam Puan: {self.score}\n\n"
         report += "--- Sürüş Analizi ---\n"
         
-        # Puan aralığı 0 ile 100 arasında değişiyor (10 soru * 10 puan)
         if self.score >= 90:
             report += "Mükemmel! Trafik kurallarına tam hakimiyet.\n"
         elif self.score >= 60:
@@ -54,7 +49,6 @@ class StoryManager:
         else:
              report += "Tehlikeli! Acil olarak kuralları tekrar etmelisin.\n"
 
-        # Kullanıcı isteği: Tespit edilen durumlarda sadece negatif bildiriler olsun
         report += "\n--- Sürüş Hataları ve Öneriler ---\n"
         has_negative = False
         
